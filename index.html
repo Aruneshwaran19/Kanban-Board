@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced To-Do List</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-4 md:p-8">
+      <!-- Header Section -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-indigo-400">
+          Project Task Board
+        </h1>
+        <p class="text-gray-400 mt-2">
+          Add new tasks and drag them to update their status.
+        </p>
+      </header>
+
+      <!-- New Task Input Section -->
+      <div class="max-w-xl mx-auto mb-10">
+        <form id="new-task-form" class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            id="task-input"
+            placeholder="Enter a new task..."
+            class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+            autocomplete="off"
+          />
+          <button
+            type="submit"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500"
+          >
+            Add Task
+          </button>
+        </form>
+      </div>
+
+      <!-- Kanban Boards Container -->
+      <div
+        id="boards-container"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+      >
+        <!-- To-Do Board -->
+        <div
+          class="board bg-gray-800 rounded-xl shadow-lg p-4 flex flex-col"
+          data-board-id="todo"
+        >
+          <h2
+            class="text-xl font-semibold mb-4 text-center text-blue-400 border-b-2 border-blue-400 pb-2"
+          >
+            To-Do
+          </h2>
+          <div
+            class="tasks-container flex-grow min-h-[200px] p-2 rounded-lg transition-all duration-300"
+          ></div>
+        </div>
+
+        <!-- In Progress Board -->
+        <div
+          class="board bg-gray-800 rounded-xl shadow-lg p-4 flex flex-col"
+          data-board-id="inprogress"
+        >
+          <h2
+            class="text-xl font-semibold mb-4 text-center text-yellow-400 border-b-2 border-yellow-400 pb-2"
+          >
+            In Progress
+          </h2>
+          <div
+            class="tasks-container flex-grow min-h-[200px] p-2 rounded-lg transition-all duration-300"
+          ></div>
+        </div>
+
+        <!-- Completed Board -->
+        <div
+          class="board bg-gray-800 rounded-xl shadow-lg p-4 flex flex-col"
+          data-board-id="completed"
+        >
+          <h2
+            class="text-xl font-semibold mb-4 text-center text-green-400 border-b-2 border-green-400 pb-2"
+          >
+            Completed
+          </h2>
+          <div
+            class="tasks-container flex-grow min-h-[200px] p-2 rounded-lg transition-all duration-300"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

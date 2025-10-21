@@ -1,0 +1,61 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.tasks-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+    background-color: #4a5568;
+    border-radius: 4px;
+}
+
+.tasks-container::-webkit-scrollbar-track {
+    background-color: #2d3748;
+}
+
+.task {
+    touch-action: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task p {
+    flex-grow: 1;
+}
+
+.task.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+}
+
+.drag-over {
+    background-color: rgba(76, 81, 191, 0.1);
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
